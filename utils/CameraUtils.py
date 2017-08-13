@@ -15,7 +15,6 @@ class CameraUtils:
             temp = CameraUtils.get_image(camera)
         file_name = FileUtils.getImageName()
 
-
         image = CameraUtils.get_image(camera)
         total_count = 0
         black_count = 0
@@ -36,8 +35,6 @@ class CameraUtils:
             image = ImageUtils.addImageToDB(db, time_lapse, file_name)
         del (camera)
         return image
-
-
 
     @staticmethod
     def get_image(camera):

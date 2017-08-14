@@ -1,4 +1,5 @@
 import time
+from flask_cors import CORS, cross_origin
 from flask import Flask, request, send_file
 from flask_restful import Resource, Api
 from sqlalchemy import create_engine
@@ -10,6 +11,7 @@ from utils.FileUtils import FileUtils
 
 db_connect = create_engine('sqlite:///timelapse.db')
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 class Preview(Resource):

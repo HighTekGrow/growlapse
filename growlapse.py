@@ -20,8 +20,8 @@ class Preview(Resource):
             tl = TimeLapseUtils.getTimeLapse(db_connect, time_lapse_id)
             filename = FileUtils.writeGif(tl, True)
             return send_file(filename, mimetype='image/gif')
-        except:
-            return {}
+        except Exception as e:
+            return { 'error': e }
 
 class TimeLapse(Resource):
     def get(self, id):
@@ -76,9 +76,11 @@ def get_image(camera):
 def worker(time_lapse):
     j = 0
     TimeLapseUtils.updateTimeLapseRunning(db_connect, time_lapse.getId(), 1)
+    # TODO(Sean): Change this to use actual time
     while j < (time_lapse.getLength() / time_lapse.getInterval()):
-        print "Taking image"
-        time_lapse.addImage(CameraUtils.takeStillPicture(db_connect, time_lapse))
+        current_image = CameraUtils.takeStillPicture(db_connect, time_lapse)
+        if current_image is not None:
+            time_lapse.addImage(current_image)
         j += 1
         time.sleep(time_lapse.getInterval())
     TimeLapseUtils.updateTimeLapseRunning(db_connect, time_lapse.getId(), 0)

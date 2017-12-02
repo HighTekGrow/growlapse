@@ -1,15 +1,10 @@
 # Grow Lapse Server
 Grow Lapse is an all in one software for managing timelapses.  This repo contains the server side code.  The server is written in python 2.7.  The map of the REST api can be found below
 
-# Requirements
-* Git
-* Python 2.7
-* PIP
-
 # Installation
 Clone and enter the repository:
 
-`git clone https://github.com/HighTekGrow/growlapse-server.git`
+`git clone https://github.com/YieldTek/growlapse-server.git`
 
 `cd growlapse-serve`
 
@@ -23,10 +18,11 @@ Copy template database:
 
 # Start The Server
 From within the root of the growlapse-server directory enter the command:
+
 `python growlapse.py`
 
 # Client Installation
-Check out the repo [here](https://github.com/HighTekGrow/growlapse-client) for information and instructions on getting the client setup.
+Check out the repo [here](https://github.com/YieldTek/growlapse-client) for information and instructions on getting the client setup.
 
 # API Endpoints
 #### /timelapse
@@ -49,14 +45,12 @@ Check out the repo [here](https://github.com/HighTekGrow/growlapse-client) for i
 
 Author: Sean Moriarty
 
-Email: hightekgrow@gmail.com
+Email: yieldtekco@gmail.com
 
-Github: github.com/smoriarty21
-
-Website: hightekco.com
+Website: yieldtek.com
 
 Reddit: reddit.com/r/hightek/
 
-Support HighTek: patreon.com/hightek
+Support YieldTek: patreon.com/hightek
 
 Donations: paypal.me/atarimaster

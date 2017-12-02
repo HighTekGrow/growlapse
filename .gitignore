@@ -1,5 +1,7 @@
-images/
-output/
+images/*
+output/*
+!images/empty
+!output/empty
 *.db
 .idea
 
